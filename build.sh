@@ -1,4 +1,4 @@
 #!/bin/bash
-php ./main.php
+python3 ./main.py
 svgo -f ./out -o ./out
 php ./to_img.php

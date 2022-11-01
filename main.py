@@ -1,6 +1,6 @@
-import glob
-from pathlib import Path
 import re
+from pathlib import Path
+
 
 inpath = "./in-seg/"
 
@@ -23,7 +23,8 @@ def gensvg(x):
     if int(x[3]) > 0:
         out.append(strip_svg_tags(Path(inpath + x[3] + ".svg").read_text()))
     with open('./out/' + x + ".svg", 'w') as out_file:
-        out_file.write(Path(inpath + "base.svg").read_text().replace("@rep@", "\n".join(out)))
+        out_file.write(
+            Path(inpath + "base.svg").read_text().replace("@rep@", "\n".join(out)))
 
 
 for x in range(9999):
